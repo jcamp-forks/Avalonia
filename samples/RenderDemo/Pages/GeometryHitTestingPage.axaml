@@ -63,6 +63,16 @@
             Stroke="#7F1D1D"
             StrokeThickness="{Binding #StrokeThickness.Value}" />
 
+      <Line
+        Margin="60,0,0,80"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Bottom"
+        Fill="Violet"
+        Stroke="Cyan"
+        StartPoint="10,10"
+        EndPoint="200,10"
+        />
+
       <Path x:Name="Probe"
             Stretch="None"
             IsVisible="False"

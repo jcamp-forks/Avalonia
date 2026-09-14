@@ -357,13 +357,12 @@ internal partial class RenderDataStream
 
     private static Geometry? GetRenderedGeometry(Geometry? geometry, IPen? pen)
     {
-        return geometry == null ? null : new CombinedGeometry(geometry.GetWidenedGeometry(pen ?? s_defaultStokePen), geometry);
+        return geometry == null ? null : geometry.GetWidenedGeometry(pen ?? s_defaultStokePen);
     }
 
     private static IGeometryImpl? GetRenderedGeometry(IGeometryImpl? geometry, IPen? pen)
     {
-        return geometry == null ? null : new CombinedGeometry(new ImmutableGeometry(geometry.GetWidenedGeometry(pen ?? s_defaultStokePen)), 
-            new ImmutableGeometry(geometry)).PlatformImpl;
+        return geometry == null ? null : new ImmutableGeometry(geometry.GetWidenedGeometry(pen ?? s_defaultStokePen)).PlatformImpl;
     }
 
     private static bool HitTestEllipse(IBrush? serverBrush, IPen? clientPen, Rect rect, Point p)
